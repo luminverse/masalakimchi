@@ -22,13 +22,13 @@
     header {
       background: linear-gradient(135deg, #ffccb8, #ffd8e8, #ffe7b8);
       text-align: center;
-      padding: 100px 20px 110px;
+      padding: 100px 20px 80px;
     }
 
     header h1 {
       font-size: 58px;
       color: #b63b2e;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       text-shadow: 0 6px 18px rgba(182, 59, 46, 0.12);
     }
 
@@ -41,7 +41,7 @@
 
     .hero-btn {
       display: inline-block;
-      margin-top: 28px;
+      margin-top: 30px;
       padding: 13px 26px;
       background: #b63b2e;
       color: white;
@@ -56,10 +56,38 @@
       transform: translateY(-2px);
     }
 
-    nav {
-      background: rgba(255, 255, 255, 0.88);
+    .highlight-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 22px;
+      max-width: 1080px;
+      margin: 35px auto 45px;
+      padding: 0 20px;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 22px;
+      padding: 24px 20px;
       text-align: center;
-      padding: 16px 10px;
+      box-shadow: 0 10px 24px rgba(118, 72, 46, 0.08);
+    }
+
+    .highlight-box h3 {
+      font-size: 19px;
+      color: #b63b2e;
+      margin-bottom: 10px;
+    }
+
+    .highlight-box p {
+      font-size: 15px;
+      color: #5a4337;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 18px 12px;
       position: sticky;
       top: 0;
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
@@ -68,9 +96,10 @@
     }
 
     nav a {
+      display: inline-block;
       text-decoration: none;
       color: #b63b2e;
-      margin: 0 14px;
+      margin: 8px 14px;
       font-weight: bold;
       font-size: 15px;
       transition: 0.2s ease;
@@ -82,7 +111,7 @@
 
     section {
       max-width: 1080px;
-      margin: 60px auto;
+      margin: 70px auto;
       padding: 0 20px;
     }
 
@@ -90,15 +119,14 @@
       text-align: center;
       font-size: 36px;
       color: #a22d24;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
       border-radius: 26px;
-      padding: 34px;
+      padding: 38px 30px;
       box-shadow: 0 12px 30px rgba(118, 72, 46, 0.08);
-      margin-bottom: 28px;
     }
 
     .intro-text {
@@ -109,43 +137,17 @@
       color: #5a4337;
     }
 
-    .highlight-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 35px;
-      padding: 0 20px;
-      max-width: 1080px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .highlight-box {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 22px;
-      padding: 22px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(118, 72, 46, 0.08);
-      margin-top: 30px;
-    }
-
-    .highlight-box h3 {
-      font-size: 18px;
-      color: #b63b2e;
-      margin-bottom: 8px;
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      margin-top: 22px;
+      gap: 24px;
+      margin-top: 24px;
     }
 
     .mini-card {
       background: #fffaf7;
       border-radius: 22px;
-      padding: 24px;
+      padding: 26px 22px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: 0.3s ease;
     }
@@ -156,43 +158,85 @@
 
     .mini-card h3 {
       color: #7b3f00;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 20px;
+    }
+
+    .mini-card p {
+      color: #5a4337;
+      font-size: 15px;
     }
 
     .connection-box {
       background: linear-gradient(135deg, #fff4ec, #fff8fb);
       border-radius: 24px;
-      padding: 30px;
+      padding: 34px 26px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.05);
     }
 
     .comparison-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin-top: 24px;
+      gap: 24px;
+      margin-top: 28px;
     }
 
     .compare-card {
       background: white;
       border-radius: 22px;
-      padding: 24px;
+      padding: 26px 22px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
     .compare-card h3 {
       color: #b63b2e;
       margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .compare-card p {
+      color: #5a4337;
+      font-size: 15px;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 32px 20px;
       background: #fff1ea;
       color: #6c4a39;
-      margin-top: 70px;
+      margin-top: 80px;
       font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 85px 18px 65px;
+      }
+
+      header h1 {
+        font-size: 42px;
+      }
+
+      header p {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      nav a {
+        margin: 6px 10px;
+        font-size: 14px;
+      }
+
+      .card,
+      .connection-box,
+      .mini-card,
+      .compare-card,
+      .highlight-box {
+        padding: 24px 18px;
+      }
     }
   </style>
 </head>
@@ -212,14 +256,17 @@
       <h3>Culture</h3>
       <p>Traditions, beauty, values, and heritage</p>
     </div>
+
     <div class="highlight-box">
       <h3>Food</h3>
       <p>Spice, comfort, flavor, and favorites</p>
     </div>
+
     <div class="highlight-box">
       <h3>Stories</h3>
       <p>Music, drama, emotion, and creativity</p>
     </div>
+
     <div class="highlight-box">
       <h3>Connection</h3>
       <p>Two worlds meeting in one place</p>
@@ -246,7 +293,7 @@
   </section>
 
   <section id="culture">
-    <h2 class="section-title">Culture & Everyday Charm</h2>
+    <h2 class="section-title">Culture and Everyday Charm</h2>
     <div class="grid">
       <div class="mini-card">
         <h3>Indian Warmth</h3>
@@ -255,6 +302,7 @@
           culture that show up in everyday life.
         </p>
       </div>
+
       <div class="mini-card">
         <h3>Korean Grace</h3>
         <p>
@@ -262,13 +310,15 @@
           with a polished modern lifestyle.
         </p>
       </div>
+
       <div class="mini-card">
-        <h3>Style & Beauty</h3>
+        <h3>Style and Beauty</h3>
         <p>
           From hanbok and minimalist fashion to lehengas and vibrant textiles, both
           cultures have distinct beauty and style.
         </p>
       </div>
+
       <div class="mini-card">
         <h3>Emotional Storytelling</h3>
         <p>
@@ -289,6 +339,7 @@
           variety, and dishes tied closely to memory.
         </p>
       </div>
+
       <div class="mini-card">
         <h3>Kimchi Energy</h3>
         <p>
@@ -296,6 +347,7 @@
           kimchi, bibimbap, tteokbokki, and ramyeon.
         </p>
       </div>
+
       <div class="mini-card">
         <h3>Street Food Joy</h3>
         <p>
@@ -303,6 +355,7 @@
           and impossible not to love.
         </p>
       </div>
+
       <div class="mini-card">
         <h3>Comfort Across Cultures</h3>
         <p>
@@ -330,6 +383,7 @@
             and deeply rooted traditions.
           </p>
         </div>
+
         <div class="compare-card">
           <h3>What Korea Brings</h3>
           <p>
@@ -337,6 +391,7 @@
             and beautifully preserved customs.
           </p>
         </div>
+
         <div class="compare-card">
           <h3>What Connects Them</h3>
           <p>
