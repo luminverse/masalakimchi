@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Korea 🇰🇷</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fff5f7 0%, #fdfdfd 50%, #f3f7ff 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f7c6d9, #dbeafe);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 52px;
+      color: #a61e4d;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #a61e4d;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      color: #b02a5b;
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    h3 {
+      color: #3b5b92;
+      margin-bottom: 10px;
+      margin-top: 15px;
+    }
+
+    .places-grid, .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .mini-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #fff0f5;
+      color: #555;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Discover Korea 🇰🇷</h1>
+    <p>
+      Explore the beauty of Korea — its culture, traditions, food, fashion,
+      entertainment, and the charm that makes it unique.
+    </p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#culture">Culture</a>
+    <a href="#food">Food</a>
+    <a href="#places">Places</a>
+    <a href="#modern">Modern Korea</a>
+  </nav>
+
+  <section id="about">
+    <div class="card">
+      <h2>About Korea</h2>
+      <p>
+        Korea is a place where deep-rooted traditions meet fast-moving modern life.
+        It is known for its rich history, beautiful language, meaningful customs,
+        delicious food, advanced cities, and global cultural influence.
+      </p>
+    </div>
+  </section>
+
+  <section id="culture">
+    <div class="card">
+      <h2>Korean Culture & Traditions</h2>
+      <h3>Hanbok</h3>
+      <p>
+        Hanbok is traditional Korean clothing known for its graceful lines,
+        bright colors, and elegant beauty.
+      </p>
+
+      <h3>Respect & Etiquette</h3>
+      <p>
+        Respect for elders, politeness, and proper manners are an important part
+        of Korean culture and daily life.
+      </p>
+
+      <h3>Festivals & Heritage</h3>
+      <p>
+        Korea has many traditional celebrations, palaces, temples, and customs
+        that reflect its long and fascinating history.
+      </p>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="card">
+      <h2>Korean Food</h2>
+      <p>
+        Korean food is flavorful, comforting, and diverse. It includes spicy,
+        savory, fermented, grilled, and street-style dishes loved by many.
+      </p>
+
+      <div class="food-grid">
+        <div class="mini-card">
+          <h3>Kimchi</h3>
+          <p>A famous fermented side dish that is a key part of Korean meals.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Bibimbap</h3>
+          <p>A mixed rice dish with vegetables, sauce, and rich flavors.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Tteokbokki</h3>
+          <p>A popular spicy street food made with chewy rice cakes.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Korean BBQ</h3>
+          <p>A fun and flavorful dining experience loved around the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="places">
+    <div class="card">
+      <h2>Famous Places in Korea</h2>
+      <div class="places-grid">
+        <div class="mini-card">
+          <h3>Seoul</h3>
+          <p>A vibrant capital city full of fashion, history, nightlife, and innovation.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Jeju Island</h3>
+          <p>Known for its natural beauty, peaceful landscapes, and scenic views.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Gyeongbokgung Palace</h3>
+          <p>A beautiful royal palace that reflects Korea’s historical grandeur.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Busan</h3>
+          <p>A coastal city famous for beaches, seafood, and lively cultural spots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modern">
+    <div class="card">
+      <h2>Modern Korea</h2>
+      <p>
+        Modern Korea is also known for its global impact through K-pop, K-dramas,
+        skincare, fashion, technology, and creative media. It has become a major
+        cultural force that inspires people around the world.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Discover Korea. Made with curiosity and admiration 🇰🇷
+  </footer>
+
+</body>
+</html>
