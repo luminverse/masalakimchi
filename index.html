@@ -10,11 +10,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #fff5ef, #fffdf9);
+  background: linear-gradient(135deg, #fff6f2, #fffdfb);
   color: #2c1b12;
   overflow-x: hidden;
 }
@@ -27,20 +27,21 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 18px 50px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(12px);
   z-index: 1000;
 }
 
 nav h2 {
-  color: #b63b2e;
+  color: #c24a3a;
+  letter-spacing: 1px;
 }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
   color: #5a4337;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* HERO */
@@ -51,102 +52,125 @@ nav a {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
+  background: radial-gradient(circle at top, #ffe3d8, #fff7f3);
 }
 
 .hero h1 {
-  font-size: 80px;
-  color: #b63b2e;
+  font-size: 82px;
+  color: #c24a3a;
   margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 .hero p {
-  font-size: 20px;
-  max-width: 700px;
+  font-size: 19px;
+  max-width: 650px;
   margin: 0 auto 30px;
   color: #5a4337;
 }
 
 .hero button {
-  padding: 14px 30px;
+  padding: 14px 32px;
   border: none;
-  background: #b63b2e;
+  background: #c24a3a;
   color: white;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
-}
-
-/* FLOATING CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 80px 60px;
-}
-
-.card {
-  background: rgba(255,255,255,0.7);
-  border-radius: 20px;
-  padding: 30px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: 0.3s;
 }
 
+.hero button:hover {
+  transform: translateY(-3px);
+}
+
+/* FLOATING GLASS CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  padding: 90px 70px;
+}
+
+.card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  transition: 0.4s;
+}
+
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #c24a3a;
+  font-size: 20px;
+}
+
+.card p {
+  color: #5a4337;
+  font-size: 15px;
+}
+
+/* FEATURE SECTION */
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 110px 70px;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text h2 {
+  font-size: 46px;
+  margin-bottom: 15px;
   color: #b63b2e;
 }
 
-/* BIG SPLIT SECTION */
-.big-section {
-  display: flex;
-  align-items: center;
-  padding: 100px 60px;
-  gap: 50px;
-}
-
-.big-text {
-  flex: 1;
-}
-
-.big-text h2 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: #a22d24;
-}
-
-.big-text p {
+.feature-text p {
   font-size: 17px;
   color: #5a4337;
+  line-height: 1.7;
 }
 
-.big-image {
+.feature-img {
   flex: 1;
-  height: 320px;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #ffd9cc, #ffe9dc);
+  height: 350px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffd9cc, #ffece2);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* SECOND FEATURE REVERSE */
+.reverse {
+  flex-direction: row-reverse;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 45px;
   background: #ffece4;
+  margin-top: 60px;
+  font-size: 14px;
 }
 
 /* MOBILE */
 @media(max-width: 768px) {
   .hero h1 {
-    font-size: 50px;
+    font-size: 52px;
   }
 
-  .big-section {
+  .feature {
     flex-direction: column;
+    text-align: center;
   }
 
   nav {
@@ -171,40 +195,51 @@ footer {
   <div>
     <h1>MasalaKimchi</h1>
     <p>
-      A bold blend of India and Korea — where culture, food, and emotion meet in one space.
+      A soft blend of India and Korea — where culture, comfort, and emotion come together beautifully.
     </p>
-    <button>Start Exploring</button>
+    <button>Enter the World</button>
   </div>
 </section>
 
 <section class="cards">
   <div class="card">
     <h3>Culture</h3>
-    <p>Traditions, beauty, and identity from both worlds.</p>
+    <p>Traditions, beauty, and identity shaping everyday life.</p>
   </div>
   <div class="card">
     <h3>Food</h3>
-    <p>Spice meets fermentation in a flavorful experience.</p>
+    <p>Spice, warmth, and flavors that feel like home.</p>
   </div>
   <div class="card">
     <h3>Stories</h3>
-    <p>Music, drama, and emotion that connect people.</p>
+    <p>Music, drama, and emotion that stay with you.</p>
   </div>
   <div class="card">
     <h3>Connection</h3>
-    <p>Two cultures blending into one vibe.</p>
+    <p>Two worlds blending into one shared vibe.</p>
   </div>
 </section>
 
-<section class="big-section">
-  <div class="big-text">
+<section class="feature">
+  <div class="feature-text">
     <h2>India × Korea</h2>
     <p>
-      From street food to storytelling, both cultures carry warmth,
-      emotion, and depth that make them unforgettable.
+      Both cultures carry depth, warmth, and strong identity.  
+      From vibrant streets to emotional storytelling, they connect in ways that feel natural and beautiful.
     </p>
   </div>
-  <div class="big-image"></div>
+  <div class="feature-img"></div>
+</section>
+
+<section class="feature reverse">
+  <div class="feature-text">
+    <h2>Why It Feels Special</h2>
+    <p>
+      It’s not just about trends — it’s about emotion, comfort, and expression.  
+      That’s what makes the blend of India and Korea so unique.
+    </p>
+  </div>
+  <div class="feature-img"></div>
 </section>
 
 <footer>
