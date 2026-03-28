@@ -1,422 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MasalaKimchi</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MasalaKimchi</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #fff8f2 0%, #fffdf9 45%, #fff3f3 100%);
-      color: #3f2c22;
-      line-height: 1.6;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    header {
-      background: linear-gradient(135deg, #ffccb8, #ffd8e8, #ffe7b8);
-      text-align: center;
-      padding: 100px 20px 80px;
-    }
+body {
+  background: linear-gradient(135deg, #fff5ef, #fffdf9);
+  color: #2c1b12;
+  overflow-x: hidden;
+}
 
-    header h1 {
-      font-size: 58px;
-      color: #b63b2e;
-      margin-bottom: 18px;
-      text-shadow: 0 6px 18px rgba(182, 59, 46, 0.12);
-    }
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 50px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
 
-    header p {
-      font-size: 20px;
-      max-width: 760px;
-      margin: 0 auto;
-      color: #5f4436;
-    }
+nav h2 {
+  color: #b63b2e;
+}
 
-    .hero-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 13px 26px;
-      background: #b63b2e;
-      color: white;
-      text-decoration: none;
-      border-radius: 999px;
-      font-size: 16px;
-      transition: 0.3s ease;
-    }
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #5a4337;
+  font-weight: bold;
+}
 
-    .hero-btn:hover {
-      background: #9f3024;
-      transform: translateY(-2px);
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
 
-    .highlight-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 22px;
-      max-width: 1080px;
-      margin: 35px auto 45px;
-      padding: 0 20px;
-    }
+.hero h1 {
+  font-size: 80px;
+  color: #b63b2e;
+  margin-bottom: 20px;
+}
 
-    .highlight-box {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 22px;
-      padding: 24px 20px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(118, 72, 46, 0.08);
-    }
+.hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #5a4337;
+}
 
-    .highlight-box h3 {
-      font-size: 19px;
-      color: #b63b2e;
-      margin-bottom: 10px;
-    }
+.hero button {
+  padding: 14px 30px;
+  border: none;
+  background: #b63b2e;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    .highlight-box p {
-      font-size: 15px;
-      color: #5a4337;
-    }
+/* FLOATING CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 80px 60px;
+}
 
-    nav {
-      background: rgba(255, 255, 255, 0.9);
-      text-align: center;
-      padding: 18px 12px;
-      position: sticky;
-      top: 0;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      backdrop-filter: blur(8px);
-      z-index: 100;
-    }
+.card {
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
 
-    nav a {
-      display: inline-block;
-      text-decoration: none;
-      color: #b63b2e;
-      margin: 8px 14px;
-      font-weight: bold;
-      font-size: 15px;
-      transition: 0.2s ease;
-    }
+.card:hover {
+  transform: translateY(-8px);
+}
 
-    nav a:hover {
-      color: #7b3f00;
-    }
+.card h3 {
+  margin-bottom: 10px;
+  color: #b63b2e;
+}
 
-    section {
-      max-width: 1080px;
-      margin: 70px auto;
-      padding: 0 20px;
-    }
+/* BIG SPLIT SECTION */
+.big-section {
+  display: flex;
+  align-items: center;
+  padding: 100px 60px;
+  gap: 50px;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      color: #a22d24;
-      margin-bottom: 28px;
-    }
+.big-text {
+  flex: 1;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.84);
-      border-radius: 26px;
-      padding: 38px 30px;
-      box-shadow: 0 12px 30px rgba(118, 72, 46, 0.08);
-    }
+.big-text h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #a22d24;
+}
 
-    .intro-text {
-      text-align: center;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 18px;
-      color: #5a4337;
-    }
+.big-text p {
+  font-size: 17px;
+  color: #5a4337;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 24px;
-    }
+.big-image {
+  flex: 1;
+  height: 320px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffd9cc, #ffe9dc);
+}
 
-    .mini-card {
-      background: #fffaf7;
-      border-radius: 22px;
-      padding: 26px 22px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: 0.3s ease;
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #ffece4;
+}
 
-    .mini-card:hover {
-      transform: translateY(-4px);
-    }
+/* MOBILE */
+@media(max-width: 768px) {
+  .hero h1 {
+    font-size: 50px;
+  }
 
-    .mini-card h3 {
-      color: #7b3f00;
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
+  .big-section {
+    flex-direction: column;
+  }
 
-    .mini-card p {
-      color: #5a4337;
-      font-size: 15px;
-    }
-
-    .connection-box {
-      background: linear-gradient(135deg, #fff4ec, #fff8fb);
-      border-radius: 24px;
-      padding: 34px 26px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .compare-card {
-      background: white;
-      border-radius: 22px;
-      padding: 26px 22px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-
-    .compare-card h3 {
-      color: #b63b2e;
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .compare-card p {
-      color: #5a4337;
-      font-size: 15px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 32px 20px;
-      background: #fff1ea;
-      color: #6c4a39;
-      margin-top: 80px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 85px 18px 65px;
-      }
-
-      header h1 {
-        font-size: 42px;
-      }
-
-      header p {
-        font-size: 17px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      nav a {
-        margin: 6px 10px;
-        font-size: 14px;
-      }
-
-      .card,
-      .connection-box,
-      .mini-card,
-      .compare-card,
-      .highlight-box {
-        padding: 24px 18px;
-      }
-    }
-  </style>
+  nav {
+    padding: 15px 20px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
+<nav>
+  <h2>MasalaKimchi</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Explore</a>
+    <a href="#">Culture</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
     <h1>MasalaKimchi</h1>
     <p>
-      A warm, colorful space celebrating the beauty of India and Korea —
-      from culture and comfort food to traditions, trends, and shared emotions.
+      A bold blend of India and Korea — where culture, food, and emotion meet in one space.
     </p>
-    <a href="#about" class="hero-btn">Step Into the Blend</a>
-  </header>
-
-  <div class="highlight-strip">
-    <div class="highlight-box">
-      <h3>Culture</h3>
-      <p>Traditions, beauty, values, and heritage</p>
-    </div>
-
-    <div class="highlight-box">
-      <h3>Food</h3>
-      <p>Spice, comfort, flavor, and favorites</p>
-    </div>
-
-    <div class="highlight-box">
-      <h3>Stories</h3>
-      <p>Music, drama, emotion, and creativity</p>
-    </div>
-
-    <div class="highlight-box">
-      <h3>Connection</h3>
-      <p>Two worlds meeting in one place</p>
-    </div>
+    <button>Start Exploring</button>
   </div>
+</section>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#culture">Culture</a>
-    <a href="#food">Food</a>
-    <a href="#connection">India × Korea</a>
-    <a href="#why">Why It Clicks</a>
-  </nav>
+<section class="cards">
+  <div class="card">
+    <h3>Culture</h3>
+    <p>Traditions, beauty, and identity from both worlds.</p>
+  </div>
+  <div class="card">
+    <h3>Food</h3>
+    <p>Spice meets fermentation in a flavorful experience.</p>
+  </div>
+  <div class="card">
+    <h3>Stories</h3>
+    <p>Music, drama, and emotion that connect people.</p>
+  </div>
+  <div class="card">
+    <h3>Connection</h3>
+    <p>Two cultures blending into one vibe.</p>
+  </div>
+</section>
 
-  <section id="about">
-    <div class="card">
-      <h2 class="section-title">About MasalaKimchi</h2>
-      <p class="intro-text">
-        MasalaKimchi is a creative celebration of the connection between India and Korea.
-        It brings together traditions, aesthetics, food, entertainment, and the little things
-        that make both cultures feel rich, expressive, and unforgettable.
-      </p>
-    </div>
-  </section>
+<section class="big-section">
+  <div class="big-text">
+    <h2>India × Korea</h2>
+    <p>
+      From street food to storytelling, both cultures carry warmth,
+      emotion, and depth that make them unforgettable.
+    </p>
+  </div>
+  <div class="big-image"></div>
+</section>
 
-  <section id="culture">
-    <h2 class="section-title">Culture and Everyday Charm</h2>
-    <div class="grid">
-      <div class="mini-card">
-        <h3>Indian Warmth</h3>
-        <p>
-          India carries color, celebration, hospitality, family bonds, and centuries of
-          culture that show up in everyday life.
-        </p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Korean Grace</h3>
-        <p>
-          Korea blends respect, elegance, strong identity, and meaningful traditions
-          with a polished modern lifestyle.
-        </p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Style and Beauty</h3>
-        <p>
-          From hanbok and minimalist fashion to lehengas and vibrant textiles, both
-          cultures have distinct beauty and style.
-        </p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Emotional Storytelling</h3>
-        <p>
-          Whether through dramas, films, or music, both India and Korea know how to
-          tell stories that people feel deeply.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="food">
-    <h2 class="section-title">Food That Feels Like Home</h2>
-    <div class="grid">
-      <div class="mini-card">
-        <h3>Masala Magic</h3>
-        <p>
-          Indian food is layered, aromatic, bold, and comforting — full of spice,
-          variety, and dishes tied closely to memory.
-        </p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Kimchi Energy</h3>
-        <p>
-          Korean food is savory, spicy, fermented, and cozy, with favorites like
-          kimchi, bibimbap, tteokbokki, and ramyeon.
-        </p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Street Food Joy</h3>
-        <p>
-          Both countries have iconic street food cultures that feel lively, social,
-          and impossible not to love.
-        </p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Comfort Across Cultures</h3>
-        <p>
-          No matter the dish, both cuisines create that same warm feeling —
-          food that tastes like care.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="connection">
-    <h2 class="section-title">India × Korea</h2>
-    <div class="connection-box">
-      <p class="intro-text">
-        The connection between India and Korea keeps growing through fandoms,
-        beauty, food, fashion, media, and genuine curiosity. MasalaKimchi is about
-        that spark — where appreciation turns into inspiration.
-      </p>
-
-      <div class="comparison-grid">
-        <div class="compare-card">
-          <h3>What India Brings</h3>
-          <p>
-            Rich diversity, expressive storytelling, powerful music, colorful fashion,
-            and deeply rooted traditions.
-          </p>
-        </div>
-
-        <div class="compare-card">
-          <h3>What Korea Brings</h3>
-          <p>
-            Refined aesthetics, global pop culture influence, thoughtful lifestyle trends,
-            and beautifully preserved customs.
-          </p>
-        </div>
-
-        <div class="compare-card">
-          <h3>What Connects Them</h3>
-          <p>
-            Emotion, family values, memorable food, love for beauty, and cultures that
-            leave a strong impression on people.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="why">
-    <div class="card">
-      <h2 class="section-title">Why It Clicks So Well</h2>
-      <p class="intro-text">
-        India and Korea may look different on the surface, but both carry depth,
-        heart, warmth, and strong cultural identity. That’s what makes the blend so
-        interesting — it feels vibrant, emotional, and full of character.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 MasalaKimchi. Made with warmth, culture, and curiosity.
-  </footer>
+<footer>
+  MasalaKimchi © 2026
+</footer>
 
 </body>
 </html>
