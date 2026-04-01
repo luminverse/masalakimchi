@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -27,14 +27,13 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 18px 50px;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(14px);
   z-index: 1000;
 }
 
 nav h2 {
   color: #c24a3a;
-  letter-spacing: 1px;
 }
 
 nav a {
@@ -42,6 +41,22 @@ nav a {
   text-decoration: none;
   color: #5a4337;
   font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #c24a3a;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* HERO */
@@ -51,72 +66,71 @@ nav a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
-  background: radial-gradient(circle at top, #ffe3d8, #fff7f3);
 }
 
 .hero h1 {
-  font-size: 82px;
+  font-size: 85px;
   color: #c24a3a;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  animation: fadeDown 1s ease;
 }
 
 .hero p {
-  font-size: 19px;
-  max-width: 650px;
-  margin: 0 auto 30px;
+  font-size: 20px;
+  margin: 20px auto;
+  max-width: 600px;
   color: #5a4337;
+  animation: fadeUp 1.2s ease;
 }
 
 .hero button {
-  padding: 14px 32px;
+  padding: 14px 34px;
   border: none;
   background: #c24a3a;
   color: white;
   border-radius: 30px;
-  font-size: 15px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .hero button:hover {
-  transform: translateY(-3px);
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(194,74,58,0.3);
 }
 
-/* FLOATING GLASS CARDS */
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 28px;
-  padding: 90px 70px;
+  padding: 100px 70px;
 }
 
 .card {
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(12px);
   border-radius: 25px;
-  padding: 35px 25px;
+  padding: 35px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.06);
   transition: 0.4s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-10px) scale(1.03);
 }
 
 .card h3 {
-  margin-bottom: 12px;
   color: #c24a3a;
-  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.card p {
-  color: #5a4337;
-  font-size: 15px;
-}
-
-/* FEATURE SECTION */
+/* FEATURE */
 .feature {
   display: flex;
   align-items: center;
@@ -131,13 +145,6 @@ nav a {
 .feature-text h2 {
   font-size: 46px;
   margin-bottom: 15px;
-  color: #b63b2e;
-}
-
-.feature-text p {
-  font-size: 17px;
-  color: #5a4337;
-  line-height: 1.7;
 }
 
 .feature-img {
@@ -145,37 +152,30 @@ nav a {
   height: 350px;
   border-radius: 30px;
   background: linear-gradient(135deg, #ffd9cc, #ffece2);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* SECOND FEATURE REVERSE */
-.reverse {
-  flex-direction: row-reverse;
+/* ANIMATIONS */
+@keyframes fadeDown {
+  from {opacity:0; transform: translateY(-40px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(40px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 45px;
+  padding: 40px;
   background: #ffece4;
-  margin-top: 60px;
-  font-size: 14px;
 }
 
 /* MOBILE */
 @media(max-width: 768px) {
-  .hero h1 {
-    font-size: 52px;
-  }
-
-  .feature {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    padding: 15px 20px;
-  }
+  .hero h1 { font-size: 55px; }
+  .feature { flex-direction: column; }
 }
 </style>
 </head>
@@ -194,50 +194,22 @@ footer {
 <section class="hero">
   <div>
     <h1>MasalaKimchi</h1>
-    <p>
-      A soft blend of India and Korea — where culture, comfort, and emotion come together beautifully.
-    </p>
-    <button>Enter the World</button>
+    <p>Aesthetic blend of India and Korea</p>
+    <button onclick="scrollToCards()">Start Exploring</button>
   </div>
 </section>
 
-<section class="cards">
-  <div class="card">
-    <h3>Culture</h3>
-    <p>Traditions, beauty, and identity shaping everyday life.</p>
-  </div>
-  <div class="card">
-    <h3>Food</h3>
-    <p>Spice, warmth, and flavors that feel like home.</p>
-  </div>
-  <div class="card">
-    <h3>Stories</h3>
-    <p>Music, drama, and emotion that stay with you.</p>
-  </div>
-  <div class="card">
-    <h3>Connection</h3>
-    <p>Two worlds blending into one shared vibe.</p>
-  </div>
+<section class="cards" id="cards">
+  <div class="card"><h3>Culture</h3><p>Traditions and identity</p></div>
+  <div class="card"><h3>Food</h3><p>Spice meets fermentation</p></div>
+  <div class="card"><h3>Stories</h3><p>Emotion and drama</p></div>
+  <div class="card"><h3>Connection</h3><p>Two worlds together</p></div>
 </section>
 
 <section class="feature">
   <div class="feature-text">
     <h2>India × Korea</h2>
-    <p>
-      Both cultures carry depth, warmth, and strong identity.  
-      From vibrant streets to emotional storytelling, they connect in ways that feel natural and beautiful.
-    </p>
-  </div>
-  <div class="feature-img"></div>
-</section>
-
-<section class="feature reverse">
-  <div class="feature-text">
-    <h2>Why It Feels Special</h2>
-    <p>
-      It’s not just about trends — it’s about emotion, comfort, and expression.  
-      That’s what makes the blend of India and Korea so unique.
-    </p>
+    <p>Both cultures share warmth and expression.</p>
   </div>
   <div class="feature-img"></div>
 </section>
@@ -245,6 +217,26 @@ footer {
 <footer>
   MasalaKimchi © 2026
 </footer>
+
+<script>
+function scrollToCards() {
+  document.getElementById("cards").scrollIntoView({ behavior: "smooth" });
+}
+
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.85;
+
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+
+    if(top < trigger){
+      card.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
